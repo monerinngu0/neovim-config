@@ -10,8 +10,6 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.cmd.colorscheme("habamax")
 
-set whichwrap+=<,>,[,]
-
 vim.opt.signcolumn = "yes"
 
 vim.opt.clipboard = "unnamedplus"
