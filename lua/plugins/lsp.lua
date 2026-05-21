@@ -65,9 +65,30 @@ return {
         },
       })
 
+      -- JavaScript / TypeScript
+      vim.lsp.config("ts_ls", {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        cmd = { "typescript-language-server", "--stdio" },
+
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+        },
+
+        root_markers = {
+          "package.json",
+          "tsconfig.json",
+          ".git",
+        },
+      })
+
       -- 有効化
       vim.lsp.enable("clangd")
       vim.lsp.enable("pyright")
+      vim.lsp.enable("ts_ls")
       --vim.lsp.enable("lua_ls")
       vim.lsp.enable("rust_analyzer")
     end,
