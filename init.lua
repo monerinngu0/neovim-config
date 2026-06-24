@@ -1,11 +1,6 @@
 require("options")
 require("keymaps")
 
--- lazy.nvim
-vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
-
-require("lazy").setup("plugins")
-
 local function load_dir(dir)
   local base = vim.fn.stdpath("config") .. "/lua/" .. dir
   local handle = vim.loop.fs_scandir(base)
@@ -25,3 +20,4 @@ end
 
 load_dir("config")
 load_dir("commands")
+load_dir("plugins")

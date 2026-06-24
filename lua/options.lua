@@ -1,5 +1,8 @@
+-- options.lua
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+vim.opt.encoding = "utf-8"
 
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
