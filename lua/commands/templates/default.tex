@@ -1,0 +1,119 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage[
+  top=25mm,
+  bottom=25mm,
+  left=25mm,
+  right=25mm
+]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+]{hyperref}
+
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\bracket}[1]{\left[ #1 \right]}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\ii}{\mathrm{i}}
+
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Ker}{ker}
+\DeclareMathOperator{\Image}{im}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\title{Title of the Document}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+
+This document presents a simple mathematical example.
+
+\begin{definition}
+A function \(f\colon \RR \to \RR\) is called \emph{continuous} at
+\(a \in \RR\) if, for every \(\varepsilon > 0\), there exists
+\(\delta > 0\) such that
+\[
+  \abs{x-a}<\delta
+  \implies
+  \abs{f(x)-f(a)}<\varepsilon.
+\]
+\end{definition}
+
+\begin{theorem}\label{thm:example}
+For every \(x \in \RR\),
+\[
+  x^2 + 1 > 0.
+\]
+\end{theorem}
+
+\begin{proof}
+Since \(x^2 \geq 0\), we have
+\[
+  x^2+1 \geq 1 > 0.
+\]
+\end{proof}
+
+By \Cref{thm:example}, the expression never vanishes.
+
+\end{document}

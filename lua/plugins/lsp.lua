@@ -85,12 +85,20 @@ return {
         },
       })
 
+      -- LaTeX
+      vim.lsp.config("texlab", {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        cmd = { "texlab" },
+      })
+
       -- 有効化
       vim.lsp.enable("clangd")
       vim.lsp.enable("pyright")
       vim.lsp.enable("ts_ls")
       --vim.lsp.enable("lua_ls")
       vim.lsp.enable("rust_analyzer")
+      vim.lsp.enable("texlab")
     end,
   },
 }

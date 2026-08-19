@@ -4,12 +4,18 @@ return {
         event = "InsertEnter",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
+            "rafamadriz/friendly-snippets",
+            "micangl/cmp-vimtex",
         },
         config = function()
             local cmp = require("cmp")
             local luasnip = require("luasnip")
+
+            require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
                 snippet = {
@@ -24,9 +30,7 @@ return {
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.abort(),
 
-                    ["<CR>"] = cmp.mapping.confirm({
-                        select = true
-                    }),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
                     ["<Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
@@ -51,11 +55,13 @@ return {
 
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
+                    { name = "vimtex" },
                     { name = "luasnip" },
+                    { name = "path" },
                 }, {
                     { name = "buffer" },
-                })
+                }),
             })
         end,
-    }
+    },
 }
